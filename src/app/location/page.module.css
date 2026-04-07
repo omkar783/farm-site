@@ -1,0 +1,107 @@
+.page {
+  flex: 1;
+  padding-top: 70px;
+}
+
+.hero {
+  background: linear-gradient(135deg, #2D5016 0%, #4a7028 100%);
+  padding: 60px 24px;
+  text-align: center;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 3rem;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--white);
+  opacity: 0.9;
+}
+
+.mapSection {
+  padding: 60px 0;
+  background: var(--background);
+}
+
+.mapContainer {
+  height: 450px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin-bottom: 32px;
+}
+
+.addressCard {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: var(--shadow);
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.addressHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+  color: var(--primary);
+}
+
+.addressHeader h2 {
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+.address {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.village {
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.directionsBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--primary);
+  color: var(--white);
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.directionsBtn:hover {
+  background: var(--secondary);
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .mapContainer {
+    height: 300px;
+  }
+}
