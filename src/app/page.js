@@ -3,6 +3,109 @@ import { ArrowRight, MapPin, Phone, Mail, Truck, Sprout, Droplets, Sun } from "l
 import Gallery from "@/components/Gallery";
 import styles from "./page.module.css";
 
+function MangoLogo({ size = 80 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="mangoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#FDE047" />
+          <stop offset="50%" stopColor="#EAB308" />
+          <stop offset="100%" stopColor="#CA8A04" />
+        </linearGradient>
+        <linearGradient id="mangoLeaf" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#22C55E" />
+          <stop offset="100%" stopColor="#15803D" />
+        </linearGradient>
+      </defs>
+      {/* Mango fruit */}
+      <ellipse cx="50" cy="60" rx="28" ry="32" fill="url(#mangoGrad)"/>
+      {/* Mango curve detail */}
+      <path d="M35 55 Q50 45 65 55" stroke="#CA8A04" strokeWidth="2" fill="none" opacity="0.5"/>
+      {/* Highlight */}
+      <ellipse cx="40" cy="50" rx="8" ry="10" fill="#FFF" opacity="0.4"/>
+      {/* Leaf */}
+      <path d="M50 28 Q35 20 45 10 Q50 20 55 10 Q65 20 50 28" fill="url(#mangoLeaf)"/>
+      <path d="M50 28 Q42 22 50 15" stroke="#166534" strokeWidth="1" fill="none"/>
+    </svg>
+  );
+}
+
+function ChikkuLogo({ size = 80 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="chikkuGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#92400E" />
+          <stop offset="50%" stopColor="#78350F" />
+          <stop offset="100%" stopColor="#451A03" />
+        </linearGradient>
+        <radialGradient id="chikkuShine" cx="30%" cy="30%">
+          <stop offset="0%" stopColor="#FFF" stopOpacity="0.3"/>
+          <stop offset="100%" stopColor="#FFF" stopOpacity="0"/>
+        </radialGradient>
+      </defs>
+      {/* Chikku fruit */}
+      <ellipse cx="50" cy="55" rx="30" ry="28" fill="url(#chikkuGrad)"/>
+      {/* Shine effect */}
+      <ellipse cx="40" cy="45" rx="12" ry="10" fill="url(#chikkuShine)"/>
+      {/* Texture dots */}
+      <circle cx="35" cy="60" r="1.5" fill="#451A03" opacity="0.4"/>
+      <circle cx="55" cy="50" r="1.5" fill="#451A03" opacity="0.4"/>
+      <circle cx="45" cy="68" r="1.5" fill="#451A03" opacity="0.4"/>
+      <circle cx="60" cy="60" r="1.5" fill="#451A03" opacity="0.4"/>
+      <circle cx="40" cy="55" r="1" fill="#451A03" opacity="0.3"/>
+      {/* Stem */}
+      <rect x="48" y="22" width="4" height="8" rx="2" fill="#451A03"/>
+      <path d="M52 24 Q60 18 55 10" stroke="#451A03" strokeWidth="2" fill="none"/>
+    </svg>
+  );
+}
+
+function JambhalLogo({ size = 80 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="jambhalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#1E3A5F" />
+          <stop offset="100%" stopColor="#0F172A" />
+        </linearGradient>
+      </defs>
+      {/* Berry body */}
+      <circle cx="50" cy="50" r="20" fill="url(#jambhalGrad)"/>
+      <circle cx="35" cy="35" r="16" fill="url(#jambhalGrad)"/>
+      <circle cx="65" cy="35" r="16" fill="url(#jambhalGrad)"/>
+      <circle cx="30" cy="55" r="14" fill="url(#jambhalGrad)"/>
+      <circle cx="70" cy="55" r="14" fill="url(#jambhalGrad)"/>
+      <circle cx="50" cy="30" r="14" fill="url(#jambhalGrad)"/>
+      {/* Shine */}
+      <circle cx="42" cy="42" r="4" fill="#FFF" opacity="0.3"/>
+      {/* Stem */}
+      <path d="M50 30 Q50 20 55 12" stroke="#1E3A5F" strokeWidth="3" fill="none" strokeLinecap="round"/>
+      {/* Leaf */}
+      <path d="M50 20 Q40 12 35 18 Q40 25 50 20" fill="#166534"/>
+    </svg>
+  );
+}
+
+function BananaLogo({ size = 80 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bananaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#FDE047" />
+          <stop offset="100%" stopColor="#EAB308" />
+        </linearGradient>
+      </defs>
+      {/* Banana bunch */}
+      <path d="M35 70 Q30 50 45 35 Q55 25 60 35 Q70 45 65 70" fill="url(#bananaGrad)" stroke="#CA8A04" strokeWidth="1"/>
+      {/* Highlight */}
+      <path d="M40 55 Q38 45 48 38" stroke="#FFF" strokeWidth="3" fill="none" opacity="0.5" strokeLinecap="round"/>
+      {/* Stem */}
+      <rect x="32" y="68" width="8" height="12" rx="2" fill="#78350F"/>
+    </svg>
+  );
+}
+
 export default function Home() {
   return (
     <div className={styles.page}>
@@ -147,8 +250,11 @@ export default function Home() {
           
           <div className={styles.previewGrid}>
             <Link href="/fruits" className={styles.previewCard}>
-              <div className={styles.previewCardBg}></div>
+              <div className={styles.previewCardBg} style={{background: 'linear-gradient(135deg, #FDE047 0%, #EAB308 50%, #CA8A04 100%)'}}></div>
               <div className={styles.previewCardContent}>
+                <div className={styles.previewLogo}>
+                  <MangoLogo size={90} />
+                </div>
                 <div className={styles.previewNum}>01</div>
                 <h3>Mango</h3>
                 <p className={styles.previewMarathi} lang="mr">आंबे</p>
@@ -160,8 +266,11 @@ export default function Home() {
             </Link>
             
             <Link href="/fruits" className={styles.previewCard}>
-              <div className={styles.previewCardBg}></div>
+              <div className={styles.previewCardBg} style={{background: 'linear-gradient(135deg, #92400E 0%, #78350F 50%, #451A03 100%)'}}></div>
               <div className={styles.previewCardContent}>
+                <div className={styles.previewLogo}>
+                  <ChikkuLogo size={90} />
+                </div>
                 <div className={styles.previewNum}>02</div>
                 <h3>Sapodilla</h3>
                 <p className={styles.previewMarathi} lang="mr">चिक्कू</p>
@@ -173,8 +282,11 @@ export default function Home() {
             </Link>
             
             <Link href="/fruits" className={styles.previewCard}>
-              <div className={styles.previewCardBg}></div>
+              <div className={styles.previewCardBg} style={{background: 'linear-gradient(135deg, #1E3A5F 0%, #0F172A 100%)'}}></div>
               <div className={styles.previewCardContent}>
+                <div className={styles.previewLogo}>
+                  <JambhalLogo size={90} />
+                </div>
                 <div className={styles.previewNum}>03</div>
                 <h3>Black Berry</h3>
                 <p className={styles.previewMarathi} lang="mr">जांभूळ</p>
