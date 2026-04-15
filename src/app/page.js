@@ -16,16 +16,22 @@ function MangoLogo({ size = 80 }) {
           <stop offset="0%" stopColor="#22C55E" />
           <stop offset="100%" stopColor="#15803D" />
         </linearGradient>
+        <linearGradient id="mangoGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#FDE047" stopOpacity="0.2" />
+          <stop offset="100%" stopColor="#FDE047" stopOpacity="0" />
+        </linearGradient>
       </defs>
+      {/* Golden glow */}
+      <circle cx="50" cy="50" r="38" fill="url(#mangoGlow)" />
       {/* Mango fruit */}
-      <ellipse cx="50" cy="60" rx="28" ry="32" fill="url(#mangoGrad)"/>
+      <ellipse cx="50" cy="58" rx="28" ry="32" fill="url(#mangoGrad)"/>
       {/* Mango curve detail */}
-      <path d="M35 55 Q50 45 65 55" stroke="#CA8A04" strokeWidth="2" fill="none" opacity="0.5"/>
+      <path d="M35 52 Q50 42 65 52" stroke="#CA8A04" strokeWidth="2.5" fill="none" opacity="0.5"/>
       {/* Highlight */}
-      <ellipse cx="40" cy="50" rx="8" ry="10" fill="#FFF" opacity="0.4"/>
+      <ellipse cx="40" cy="48" rx="9" ry="11" fill="#FFF" opacity="0.45"/>
       {/* Leaf */}
-      <path d="M50 28 Q35 20 45 10 Q50 20 55 10 Q65 20 50 28" fill="url(#mangoLeaf)"/>
-      <path d="M50 28 Q42 22 50 15" stroke="#166534" strokeWidth="1" fill="none"/>
+      <path d="M50 26 Q32 16 42 6 Q50 16 58 6 Q68 16 50 26" fill="url(#mangoLeaf)"/>
+      <path d="M50 26 Q42 18 50 10" stroke="#166534" strokeWidth="1.5" fill="none"/>
     </svg>
   );
 }

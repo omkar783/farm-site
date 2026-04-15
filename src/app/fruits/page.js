@@ -17,12 +17,22 @@ function MangoIcon({ size = 140 }) {
           <stop offset="0%" stopColor="#22C55E" />
           <stop offset="100%" stopColor="#15803D" />
         </linearGradient>
+        <radialGradient id="mangoGlow" cx="50%" cy="50%">
+          <stop offset="0%" stopColor="#FDE047" stopOpacity="0.15"/>
+          <stop offset="100%" stopColor="#FDE047" stopOpacity="0"/>
+        </radialGradient>
       </defs>
+      {/* Golden outer glow */}
+      <circle cx="50" cy="50" r="40" fill="url(#mangoGlow)"/>
+      {/* Mango fruit */}
       <ellipse cx="50" cy="58" rx="28" ry="32" fill="url(#mangoGrad)"/>
-      <path d="M35 52 Q50 42 65 52" stroke="#B45309" strokeWidth="2" fill="none" opacity="0.4"/>
-      <ellipse cx="40" cy="48" rx="8" ry="10" fill="#FFF" opacity="0.5"/>
-      <path d="M50 26 Q35 18 42 8 Q50 18 58 8 Q65 18 50 26" fill="url(#mangoLeaf)"/>
-      <path d="M50 26 Q44 18 50 12" stroke="#166534" strokeWidth="1.5" fill="none"/>
+      {/* Mango curve detail */}
+      <path d="M35 52 Q50 42 65 52" stroke="#B45309" strokeWidth="2.5" fill="none" opacity="0.5"/>
+      {/* Highlight */}
+      <ellipse cx="40" cy="48" rx="9" ry="11" fill="#FFF" opacity="0.5"/>
+      {/* Leaf */}
+      <path d="M50 26 Q32 16 42 6 Q50 16 58 6 Q68 16 50 26" fill="url(#mangoLeaf)"/>
+      <path d="M50 26 Q42 18 50 10" stroke="#166534" strokeWidth="1.5" fill="none"/>
     </svg>
   );
 }
