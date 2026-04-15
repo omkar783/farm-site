@@ -3,7 +3,7 @@
   overflow: hidden;
   position: relative;
   min-height: 100vh;
-  background: linear-gradient(180deg, #F0FDF4 0%, #DCFCE7 50%, #F0FDF4 100%);
+  background: #030303;
 }
 
 .bgOrbs {
@@ -16,44 +16,44 @@
 .orb1, .orb2, .orb3 {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
-  animation: float 20s ease-in-out infinite;
+  filter: blur(100px);
+  animation: float 25s ease-in-out infinite;
 }
 
 .orb1 {
-  width: 600px;
-  height: 600px;
+  width: 700px;
+  height: 700px;
   top: -200px;
   right: -200px;
-  background: radial-gradient(circle, rgba(34, 197, 94, 0.2) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(253, 224, 71, 0.08) 0%, transparent 60%);
 }
 
 .orb2 {
-  width: 500px;
-  height: 500px;
-  top: 50%;
-  left: -150px;
-  background: radial-gradient(circle, rgba(202, 138, 4, 0.15) 0%, transparent 70%);
-  animation-delay: -7s;
+  width: 600px;
+  height: 600px;
+  top: 40%;
+  left: -200px;
+  background: radial-gradient(circle, rgba(253, 224, 71, 0.05) 0%, transparent 60%);
+  animation-delay: -10s;
 }
 
 .orb3 {
-  width: 400px;
-  height: 400px;
+  width: 500px;
+  height: 500px;
   bottom: -100px;
-  right: 30%;
-  background: radial-gradient(circle, rgba(21, 128, 61, 0.15) 0%, transparent 70%);
-  animation-delay: -14s;
+  right: 20%;
+  background: radial-gradient(circle, rgba(253, 224, 71, 0.04) 0%, transparent 60%);
+  animation-delay: -18s;
 }
 
 @keyframes float {
   0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(30px, -30px) scale(1.05); }
-  66% { transform: translate(-20px, 20px) scale(0.95); }
+  33% { transform: translate(40px, -40px) scale(1.05); }
+  66% { transform: translate(-30px, 30px) scale(0.95); }
 }
 
 .hero {
-  min-height: 50vh;
+  min-height: 55vh;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -67,111 +67,107 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 800px;
-  height: 400px;
-  background: radial-gradient(ellipse, rgba(34, 197, 94, 0.15) 0%, transparent 70%);
-  filter: blur(40px);
-  animation: heroPulse 8s ease-in-out infinite;
+  width: 900px;
+  height: 500px;
+  background: radial-gradient(ellipse, rgba(253, 224, 71, 0.06) 0%, transparent 60%);
+  filter: blur(60px);
+  animation: heroPulse 10s ease-in-out infinite;
 }
 
 @keyframes heroPulse {
-  0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
-  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+  0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.9; transform: translate(-50%, -50%) scale(1.1); }
 }
 
 .heroContent {
   position: relative;
   text-align: center;
-  padding: 120px 24px 60px;
+  padding: 140px 24px 60px;
 }
 
 .heroLabel {
   display: inline-block;
   font-size: 0.7rem;
   font-weight: 600;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: #15803D;
-  margin-bottom: 20px;
-  padding: 10px 24px;
-  background: rgba(21, 128, 61, 0.1);
-  border: 1px solid rgba(21, 128, 61, 0.25);
+  color: #FDE047;
+  margin-bottom: 24px;
+  padding: 12px 28px;
+  background: rgba(253, 224, 71, 0.08);
+  border: 1px solid rgba(253, 224, 71, 0.2);
   border-radius: 50px;
 }
 
 .title {
-  font-size: clamp(3rem, 10vw, 5.5rem);
-  font-weight: 700;
+  font-size: clamp(3rem, 12vw, 6rem);
+  font-weight: 500;
   letter-spacing: -0.04em;
   line-height: 1.1;
-  color: #15803D;
+  color: #FAFAFA;
   margin-bottom: 8px;
-  font-family: 'Lora', Georgia, serif;
+  font-family: 'Playfair Display', Georgia, serif;
 }
 
 .titleMarathi {
   font-size: clamp(1.5rem, 4vw, 2.5rem);
-  font-weight: 500;
-  color: #22C55E;
-  margin-bottom: 20px;
-  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-weight: 400;
+  color: rgba(253, 224, 71, 0.7);
+  margin-bottom: 24px;
 }
 
 .subtitle {
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  color: #166534;
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  color: rgba(250, 250, 250, 0.45);
   max-width: 500px;
   margin: 0 auto 8px;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Outfit', sans-serif;
 }
 
 .subtitleMarathi {
   font-size: clamp(0.85rem, 1.5vw, 1.1rem);
-  color: #22C55E;
+  color: rgba(253, 224, 71, 0.4);
   font-family: 'Noto Sans Devanagari', sans-serif;
 }
 
 .fruitsSection {
   position: relative;
-  padding: 60px 0 100px;
+  padding: 80px 0 120px;
   z-index: 1;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
-  max-width: 1100px;
+  gap: 32px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
 .card {
   position: relative;
-  background: linear-gradient(135deg, #FFFFFF 0%, #F0FDF4 100%);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(21, 128, 61, 0.12);
-  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 32px;
   overflow: hidden;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
-  transform: translateY(40px);
-  box-shadow: 0 4px 20px rgba(21, 128, 61, 0.08);
+  transform: translateY(60px);
 }
 
 .cardLoaded {
   opacity: 1;
   transform: translateY(0);
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
   transition-delay: var(--delay, 0s);
 }
 
 .card:hover {
-  transform: translateY(-12px);
-  background: linear-gradient(135deg, #FFFFFF 0%, #DCFCE7 100%);
-  border-color: rgba(21, 128, 61, 0.25);
-  box-shadow: 0 30px 60px rgba(21, 128, 61, 0.15), 0 0 40px rgba(34, 197, 94, 0.1);
+  transform: translateY(-16px);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(253, 224, 71, 0.2);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), 0 0 60px rgba(253, 224, 71, 0.08);
 }
 
 .card.clickable {
@@ -181,27 +177,27 @@
 .cardGlow {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 0%, var(--accent, #22C55E) 0%, transparent 60%);
+  background: radial-gradient(circle at 50% 0%, rgba(253, 224, 71, 0.15) 0%, transparent 60%);
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.6s ease;
 }
 
 .card:hover .cardGlow {
-  opacity: 0.08;
+  opacity: 1;
 }
 
 .cardBorder {
   position: absolute;
   inset: 0;
   border: 2px solid transparent;
-  border-radius: 28px;
-  background: linear-gradient(135deg, rgba(21, 128, 61, 0.25) 0%, rgba(34, 197, 94, 0.1) 50%) border-box;
+  border-radius: 32px;
+  background: linear-gradient(135deg, rgba(253, 224, 71, 0.3) 0%, rgba(253, 224, 71, 0.05) 50%) border-box;
   mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
   -webkit-mask-composite: xor;
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.6s ease;
 }
 
 .card:hover .cardBorder {
@@ -212,7 +208,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 40px;
+  padding: 48px;
   height: 100%;
 }
 
@@ -221,38 +217,38 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 160px;
-  height: 160px;
-  margin: 0 auto 28px;
-  background: linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%);
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 36px;
+  background: rgba(253, 224, 71, 0.04);
   border-radius: 50%;
 }
 
 .iconWrap svg {
-  filter: drop-shadow(0 10px 25px rgba(21, 128, 61, 0.2));
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 20px 40px rgba(253, 224, 71, 0.2));
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card:hover .iconWrap svg {
-  transform: scale(1.15) rotate(5deg);
+  transform: scale(1.2) rotate(8deg);
 }
 
 .iconRing {
   position: absolute;
-  width: 180px;
-  height: 180px;
-  border: 2px solid rgba(21, 128, 61, 0.1);
+  width: 200px;
+  height: 200px;
+  border: 1px solid rgba(253, 224, 71, 0.1);
   border-radius: 50%;
-  animation: ringPulse 4s ease-in-out infinite;
+  animation: ringPulse 5s ease-in-out infinite;
 }
 
 .card:hover .iconRing {
-  border-color: rgba(21, 128, 61, 0.25);
+  border-color: rgba(253, 224, 71, 0.25);
 }
 
 @keyframes ringPulse {
-  0%, 100% { transform: scale(1); opacity: 0.3; }
-  50% { transform: scale(1.08); opacity: 0.6; }
+  0%, 100% { transform: scale(1); opacity: 0.2; }
+  50% { transform: scale(1.1); opacity: 0.5; }
 }
 
 .cardBody {
@@ -267,172 +263,157 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
-  margin-bottom: 8px;
+  gap: 6px;
+  margin-bottom: 12px;
 }
 
 .cardTagline {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 600;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--accent, #22C55E);
-  font-family: 'Raleway', sans-serif;
+  color: #FDE047;
+  font-family: 'Outfit', sans-serif;
 }
 
 .cardTaglineMarathi {
   font-size: 0.85rem;
-  color: #166534;
+  color: rgba(253, 224, 71, 0.5);
   font-family: 'Noto Sans Devanagari', sans-serif;
 }
 
 .cardTitle {
-  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
-  font-weight: 700;
-  color: #15803D;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 500;
+  color: #FAFAFA;
   margin: 0;
   line-height: 1.2;
-  font-family: 'Lora', Georgia, serif;
+  font-family: 'Playfair Display', Georgia, serif;
 }
 
 .cardTitleMarathi {
-  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
-  font-weight: 500;
-  color: #22C55E;
-  margin: 0 0 20px;
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  font-weight: 400;
+  color: rgba(253, 224, 71, 0.65);
+  margin: 0 0 24px;
   font-family: 'Noto Sans Devanagari', sans-serif;
 }
 
 .cardSeason {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 10px 20px;
-  background: rgba(21, 128, 61, 0.06);
-  border: 1px solid rgba(21, 128, 61, 0.12);
+  gap: 12px;
+  padding: 12px 24px;
+  background: rgba(253, 224, 71, 0.06);
+  border: 1px solid rgba(253, 224, 71, 0.12);
   border-radius: 50px;
   font-size: 0.85rem;
-  color: #166534;
-  margin-bottom: 18px;
-  font-family: 'Raleway', sans-serif;
+  color: rgba(250, 250, 250, 0.6);
+  margin-bottom: 20px;
+  font-family: 'Outfit', sans-serif;
 }
 
 .cardSeason svg {
-  color: var(--accent, #22C55E);
+  color: #FDE047;
 }
 
 .cardSeasonMarathi {
-  color: #22C55E;
+  color: rgba(253, 224, 71, 0.5);
   font-family: 'Noto Sans Devanagari', sans-serif;
 }
 
 .cardSeasonMarathi::before {
   content: '\2022';
-  margin: 0 8px;
-  opacity: 0.5;
+  margin: 0 10px;
+  opacity: 0.4;
 }
 
 .cardDesc {
-  font-size: 0.95rem;
-  line-height: 1.75;
-  color: #166534;
-  margin: 0 0 20px;
-  max-width: 320px;
-  font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(250, 250, 250, 0.45);
+  margin: 0 0 24px;
+  max-width: 340px;
+  font-family: 'Outfit', sans-serif;
 }
 
 .cardHighlights {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
-  margin-bottom: 24px;
+  gap: 12px;
+  margin-bottom: 28px;
 }
 
 .highlightTag {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 14px;
-  background: rgba(21, 128, 61, 0.06);
-  border: 1px solid rgba(21, 128, 61, 0.12);
+  padding: 8px 16px;
+  background: rgba(253, 224, 71, 0.05);
+  border: 1px solid rgba(253, 224, 71, 0.1);
   border-radius: 50px;
   font-size: 0.75rem;
-  font-weight: 600;
-  color: #15803D;
-  font-family: 'Raleway', sans-serif;
-  transition: all 0.3s ease;
+  font-weight: 500;
+  color: rgba(250, 250, 250, 0.6);
+  font-family: 'Outfit', sans-serif;
+  transition: all 0.4s ease;
 }
 
 .highlightTag svg {
-  color: #22C55E;
+  color: #FDE047;
 }
 
 .card:hover .highlightTag {
-  background: rgba(21, 128, 61, 0.12);
-  border-color: rgba(21, 128, 61, 0.2);
-  color: #15803D;
+  background: rgba(253, 224, 71, 0.1);
+  border-color: rgba(253, 224, 71, 0.2);
+  color: #FDE047;
 }
 
 .cardCta {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 14px 28px;
-  background: linear-gradient(135deg, #15803D 0%, #22C55E 100%);
+  gap: 12px;
+  padding: 16px 32px;
+  background: linear-gradient(135deg, #FDE047, #EAB308);
   border-radius: 50px;
   font-size: 0.9rem;
-  font-weight: 700;
-  color: #FFFFFF;
+  font-weight: 600;
+  color: #030303;
   margin-top: auto;
-  transition: all 0.4s ease;
-  font-family: 'Raleway', sans-serif;
-  box-shadow: 0 10px 30px rgba(21, 128, 61, 0.3);
+  transition: all 0.5s ease;
+  font-family: 'Outfit', sans-serif;
+  box-shadow: 0 12px 40px rgba(253, 224, 71, 0.25);
 }
 
 .card:hover .cardCta {
-  transform: translateX(6px);
-  box-shadow: 0 15px 40px rgba(21, 128, 61, 0.4);
+  transform: translateX(8px);
+  box-shadow: 0 20px 50px rgba(253, 224, 71, 0.35);
 }
 
 .cardCta svg {
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
 }
 
 .card:hover .cardCta svg {
-  transform: translateX(6px);
+  transform: translateX(8px);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .grid {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 28px;
     padding: 0 20px;
-  }
-  
-  .iconWrap {
-    width: 140px;
-    height: 140px;
-  }
-  
-  .iconWrap svg {
-    width: 100px !important;
-    height: 100px !important;
-  }
-  
-  .iconRing {
-    width: 160px;
-    height: 160px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .hero {
-    min-height: 45vh;
+    min-height: 50vh;
   }
   
   .heroContent {
-    padding: 100px 20px 40px;
+    padding: 120px 20px 40px;
   }
   
   .title {
@@ -443,13 +424,30 @@
     font-size: 1.25rem;
   }
   
+  .iconWrap {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .iconWrap svg {
+    width: 100px !important;
+    height: 100px !important;
+  }
+  
+  .iconRing {
+    width: 170px;
+    height: 170px;
+  }
+}
+
+@media (max-width: 480px) {
   .cardContent {
-    padding: 32px 24px;
+    padding: 36px 24px;
   }
   
   .iconWrap {
-    width: 120px;
-    height: 120px;
+    width: 130px;
+    height: 130px;
   }
   
   .iconWrap svg {
@@ -458,7 +456,7 @@
   }
   
   .iconRing {
-    width: 140px;
-    height: 140px;
+    width: 150px;
+    height: 150px;
   }
 }
