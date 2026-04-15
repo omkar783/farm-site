@@ -24,8 +24,15 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: url('/images/farm/farm-1.jpg') center/cover no-repeat;
-  opacity: 0.5;
+  background: url('/images/farm/farm-5.jpg') center/cover no-repeat;
+  opacity: 0.7;
+  animation: heroZoom 20s infinite ease-in-out;
+}
+
+@keyframes heroZoom {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
 }
 
 .heroBg::after {
@@ -33,10 +40,10 @@
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    180deg,
-    rgba(12, 10, 9, 0.7) 0%,
-    rgba(12, 10, 9, 0.5) 50%,
-    rgba(12, 10, 9, 0.9) 100%
+    135deg,
+    rgba(12, 10, 9, 0.75) 0%,
+    rgba(12, 10, 9, 0.5) 40%,
+    rgba(12, 10, 9, 0.7) 100%
   );
 }
 

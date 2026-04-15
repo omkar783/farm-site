@@ -7,6 +7,7 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <section className={styles.hero}>
+        <div className={styles.heroBg}></div>
         <div className={styles.heroOverlay}>
           <div className={styles.heroContent}>
             <div className={styles.heroBadge}>
