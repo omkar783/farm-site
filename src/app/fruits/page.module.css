@@ -2,6 +2,8 @@
   flex: 1;
   overflow: hidden;
   position: relative;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0C0A09 0%, #1C1917 50%, #0C0A09 100%);
 }
 
 .bgOrbs {
@@ -80,7 +82,7 @@
 .heroContent {
   position: relative;
   text-align: center;
-  padding: 100px 24px 60px;
+  padding: 120px 24px 60px;
 }
 
 .heroLabel {
@@ -89,51 +91,44 @@
   font-weight: 600;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.4);
+  color: #FDE047;
   margin-bottom: 20px;
-  padding: 8px 20px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 10px 24px;
+  background: rgba(253, 224, 71, 0.1);
+  border: 1px solid rgba(253, 224, 71, 0.3);
   border-radius: 50px;
 }
 
 .title {
-  font-size: clamp(3.5rem, 10vw, 6rem);
-  font-weight: 600;
+  font-size: clamp(3rem, 10vw, 5.5rem);
+  font-weight: 700;
   letter-spacing: -0.04em;
-  line-height: 1.05;
+  line-height: 1.1;
   color: #FFF;
   margin-bottom: 8px;
-  background: linear-gradient(135deg, #FFF 0%, #FDE047 50%, #FFF 100%);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: shimmer 5s ease-in-out infinite;
-}
-
-@keyframes shimmer {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  font-family: 'Cormorant', Georgia, serif;
 }
 
 .titleMarathi {
   font-size: clamp(1.5rem, 4vw, 2.5rem);
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.85);
+  color: #FDE047;
   margin-bottom: 20px;
+  font-family: 'Noto Sans Devanagari', sans-serif;
 }
 
 .subtitle {
   font-size: clamp(1rem, 2vw, 1.25rem);
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.6);
   max-width: 500px;
-  margin: 0 auto 6px;
+  margin: 0 auto 8px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .subtitleMarathi {
-  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  font-size: clamp(0.85rem, 1.5vw, 1.1rem);
   color: rgba(255, 255, 255, 0.4);
+  font-family: 'Noto Sans Devanagari', sans-serif;
 }
 
 .fruitsSection {
@@ -153,8 +148,10 @@
 
 .card {
   position: relative;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 28px;
   overflow: hidden;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -170,10 +167,10 @@
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+  transform: translateY(-12px);
+  background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.04) 100%);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(var(--accent), 0.15);
 }
 
 .card.clickable {
@@ -183,13 +180,13 @@
 .cardGlow {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, var(--accent, #FDE047) 0%, transparent 60%);
+  background: radial-gradient(circle at 50% 0%, var(--accent, #FDE047) 0%, transparent 60%);
   opacity: 0;
   transition: opacity 0.5s ease;
 }
 
 .card:hover .cardGlow {
-  opacity: 0.06;
+  opacity: 0.08;
 }
 
 .cardBorder {
@@ -197,7 +194,7 @@
   inset: 0;
   border: 2px solid transparent;
   border-radius: 28px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%) border-box;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.05) 50%) border-box;
   mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
@@ -214,7 +211,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 36px;
+  padding: 40px;
   height: 100%;
 }
 
@@ -229,26 +226,30 @@
 }
 
 .iconWrap svg {
-  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.4));
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card:hover .iconWrap svg {
-  transform: scale(1.1) rotate(5deg);
+  transform: scale(1.15) rotate(5deg);
 }
 
 .iconRing {
   position: absolute;
   width: 180px;
   height: 180px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   animation: ringPulse 4s ease-in-out infinite;
 }
 
+.card:hover .iconRing {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
 @keyframes ringPulse {
   0%, 100% { transform: scale(1); opacity: 0.3; }
-  50% { transform: scale(1.05); opacity: 0.6; }
+  50% { transform: scale(1.08); opacity: 0.6; }
 }
 
 .cardBody {
@@ -270,43 +271,47 @@
 .cardTagline {
   font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--accent, #FDE047);
-  opacity: 0.9;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .cardTaglineMarathi {
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.5);
+  font-family: 'Noto Sans Devanagari', sans-serif;
 }
 
 .cardTitle {
   font-size: clamp(1.75rem, 3.5vw, 2.25rem);
-  font-weight: 600;
+  font-weight: 700;
   color: #FFF;
   margin: 0;
   line-height: 1.2;
+  font-family: 'Cormorant', Georgia, serif;
 }
 
 .cardTitleMarathi {
   font-size: clamp(1.25rem, 2.5vw, 1.5rem);
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.7);
-  margin: 0 0 16px;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0 0 20px;
+  font-family: 'Noto Sans Devanagari', sans-serif;
 }
 
 .cardSeason {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 8px 18px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 50px;
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.6);
-  margin-bottom: 16px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 18px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .cardSeason svg {
@@ -315,41 +320,44 @@
 
 .cardSeasonMarathi {
   color: rgba(255, 255, 255, 0.4);
+  font-family: 'Noto Sans Devanagari', sans-serif;
 }
 
 .cardSeasonMarathi::before {
   content: '\2022';
-  margin: 0 6px;
+  margin: 0 8px;
   opacity: 0.5;
 }
 
 .cardDesc {
   font-size: 0.95rem;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.55);
   margin: 0 0 20px;
   max-width: 320px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .cardHighlights {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 8px;
-  margin-bottom: 20px;
+  gap: 10px;
+  margin-bottom: 24px;
 }
 
 .highlightTag {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  padding: 5px 12px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 50px;
   font-size: 0.75rem;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Montserrat', sans-serif;
   transition: all 0.3s ease;
 }
 
@@ -358,29 +366,30 @@
 }
 
 .card:hover .highlightTag {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.12);
-  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: #FFF;
 }
 
 .cardCta {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 12px 24px;
-  background: linear-gradient(135deg, var(--accent, #FDE047) 0%, #CA8A04 100%);
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #FDE047 0%, #EAB308 100%);
   border-radius: 50px;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 700;
   color: #0C0A09;
   margin-top: auto;
   transition: all 0.4s ease;
-  box-shadow: 0 8px 30px rgba(var(--accent, #FDE047), 0.3);
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: 0 10px 30px rgba(253, 224, 71, 0.3);
 }
 
 .card:hover .cardCta {
-  transform: translateX(4px);
-  box-shadow: 0 12px 40px rgba(var(--accent, #FDE047), 0.5);
+  transform: translateX(6px);
+  box-shadow: 0 15px 40px rgba(253, 224, 71, 0.5);
 }
 
 .cardCta svg {
@@ -388,7 +397,7 @@
 }
 
 .card:hover .cardCta svg {
-  transform: translateX(4px);
+  transform: translateX(6px);
 }
 
 @media (max-width: 900px) {
@@ -420,7 +429,7 @@
   }
   
   .heroContent {
-    padding: 80px 20px 40px;
+    padding: 100px 20px 40px;
   }
   
   .title {
@@ -432,7 +441,7 @@
   }
   
   .cardContent {
-    padding: 28px 20px;
+    padding: 32px 24px;
   }
   
   .iconWrap {
