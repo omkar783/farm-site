@@ -3,7 +3,7 @@
   overflow: hidden;
   position: relative;
   min-height: 100vh;
-  background: linear-gradient(180deg, #0C0A09 0%, #1C1917 50%, #0C0A09 100%);
+  background: linear-gradient(180deg, #F0FDF4 0%, #DCFCE7 50%, #F0FDF4 100%);
 }
 
 .bgOrbs {
@@ -24,16 +24,16 @@
   width: 600px;
   height: 600px;
   top: -200px;
-  left: -200px;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+  right: -200px;
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.2) 0%, transparent 70%);
 }
 
 .orb2 {
   width: 500px;
   height: 500px;
   top: 50%;
-  right: -150px;
-  background: radial-gradient(circle, rgba(234, 179, 8, 0.12) 0%, transparent 70%);
+  left: -150px;
+  background: radial-gradient(circle, rgba(202, 138, 4, 0.15) 0%, transparent 70%);
   animation-delay: -7s;
 }
 
@@ -41,8 +41,8 @@
   width: 400px;
   height: 400px;
   bottom: -100px;
-  left: 30%;
-  background: radial-gradient(circle, rgba(34, 197, 94, 0.1) 0%, transparent 70%);
+  right: 30%;
+  background: radial-gradient(circle, rgba(21, 128, 61, 0.15) 0%, transparent 70%);
   animation-delay: -14s;
 }
 
@@ -69,7 +69,7 @@
   transform: translate(-50%, -50%);
   width: 800px;
   height: 400px;
-  background: radial-gradient(ellipse, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(34, 197, 94, 0.15) 0%, transparent 70%);
   filter: blur(40px);
   animation: heroPulse 8s ease-in-out infinite;
 }
@@ -91,11 +91,11 @@
   font-weight: 600;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: #FDE047;
+  color: #15803D;
   margin-bottom: 20px;
   padding: 10px 24px;
-  background: rgba(253, 224, 71, 0.1);
-  border: 1px solid rgba(253, 224, 71, 0.3);
+  background: rgba(21, 128, 61, 0.1);
+  border: 1px solid rgba(21, 128, 61, 0.25);
   border-radius: 50px;
 }
 
@@ -104,30 +104,30 @@
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1.1;
-  color: #FFF;
+  color: #15803D;
   margin-bottom: 8px;
-  font-family: 'Cormorant', Georgia, serif;
+  font-family: 'Lora', Georgia, serif;
 }
 
 .titleMarathi {
   font-size: clamp(1.5rem, 4vw, 2.5rem);
   font-weight: 500;
-  color: #FDE047;
+  color: #22C55E;
   margin-bottom: 20px;
   font-family: 'Noto Sans Devanagari', sans-serif;
 }
 
 .subtitle {
   font-size: clamp(1rem, 2vw, 1.25rem);
-  color: rgba(255, 255, 255, 0.6);
+  color: #166534;
   max-width: 500px;
   margin: 0 auto 8px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 .subtitleMarathi {
   font-size: clamp(0.85rem, 1.5vw, 1.1rem);
-  color: rgba(255, 255, 255, 0.4);
+  color: #22C55E;
   font-family: 'Noto Sans Devanagari', sans-serif;
 }
 
@@ -148,15 +148,16 @@
 
 .card {
   position: relative;
-  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+  background: linear-gradient(135deg, #FFFFFF 0%, #F0FDF4 100%);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(21, 128, 61, 0.12);
   border-radius: 28px;
   overflow: hidden;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
   transform: translateY(40px);
+  box-shadow: 0 4px 20px rgba(21, 128, 61, 0.08);
 }
 
 .cardLoaded {
@@ -168,9 +169,9 @@
 
 .card:hover {
   transform: translateY(-12px);
-  background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.04) 100%);
-  border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(var(--accent), 0.15);
+  background: linear-gradient(135deg, #FFFFFF 0%, #DCFCE7 100%);
+  border-color: rgba(21, 128, 61, 0.25);
+  box-shadow: 0 30px 60px rgba(21, 128, 61, 0.15), 0 0 40px rgba(34, 197, 94, 0.1);
 }
 
 .card.clickable {
@@ -180,7 +181,7 @@
 .cardGlow {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 0%, var(--accent, #FDE047) 0%, transparent 60%);
+  background: radial-gradient(circle at 50% 0%, var(--accent, #22C55E) 0%, transparent 60%);
   opacity: 0;
   transition: opacity 0.5s ease;
 }
@@ -194,7 +195,7 @@
   inset: 0;
   border: 2px solid transparent;
   border-radius: 28px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.05) 50%) border-box;
+  background: linear-gradient(135deg, rgba(21, 128, 61, 0.25) 0%, rgba(34, 197, 94, 0.1) 50%) border-box;
   mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
@@ -223,10 +224,12 @@
   width: 160px;
   height: 160px;
   margin: 0 auto 28px;
+  background: linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%);
+  border-radius: 50%;
 }
 
 .iconWrap svg {
-  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(0 10px 25px rgba(21, 128, 61, 0.2));
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -238,13 +241,13 @@
   position: absolute;
   width: 180px;
   height: 180px;
-  border: 2px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(21, 128, 61, 0.1);
   border-radius: 50%;
   animation: ringPulse 4s ease-in-out infinite;
 }
 
 .card:hover .iconRing {
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(21, 128, 61, 0.25);
 }
 
 @keyframes ringPulse {
@@ -273,29 +276,29 @@
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--accent, #FDE047);
-  font-family: 'Montserrat', sans-serif;
+  color: var(--accent, #22C55E);
+  font-family: 'Raleway', sans-serif;
 }
 
 .cardTaglineMarathi {
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: #166534;
   font-family: 'Noto Sans Devanagari', sans-serif;
 }
 
 .cardTitle {
   font-size: clamp(1.75rem, 3.5vw, 2.25rem);
   font-weight: 700;
-  color: #FFF;
+  color: #15803D;
   margin: 0;
   line-height: 1.2;
-  font-family: 'Cormorant', Georgia, serif;
+  font-family: 'Lora', Georgia, serif;
 }
 
 .cardTitleMarathi {
   font-size: clamp(1.25rem, 2.5vw, 1.5rem);
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.75);
+  color: #22C55E;
   margin: 0 0 20px;
   font-family: 'Noto Sans Devanagari', sans-serif;
 }
@@ -305,21 +308,21 @@
   align-items: center;
   gap: 10px;
   padding: 10px 20px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(21, 128, 61, 0.06);
+  border: 1px solid rgba(21, 128, 61, 0.12);
   border-radius: 50px;
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: #166534;
   margin-bottom: 18px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 .cardSeason svg {
-  color: var(--accent, #FDE047);
+  color: var(--accent, #22C55E);
 }
 
 .cardSeasonMarathi {
-  color: rgba(255, 255, 255, 0.4);
+  color: #22C55E;
   font-family: 'Noto Sans Devanagari', sans-serif;
 }
 
@@ -332,10 +335,10 @@
 .cardDesc {
   font-size: 0.95rem;
   line-height: 1.75;
-  color: rgba(255, 255, 255, 0.55);
+  color: #166534;
   margin: 0 0 20px;
   max-width: 320px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 .cardHighlights {
@@ -351,13 +354,13 @@
   align-items: center;
   gap: 6px;
   padding: 6px 14px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(21, 128, 61, 0.06);
+  border: 1px solid rgba(21, 128, 61, 0.12);
   border-radius: 50px;
   font-size: 0.75rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.7);
-  font-family: 'Montserrat', sans-serif;
+  color: #15803D;
+  font-family: 'Raleway', sans-serif;
   transition: all 0.3s ease;
 }
 
@@ -366,9 +369,9 @@
 }
 
 .card:hover .highlightTag {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.18);
-  color: #FFF;
+  background: rgba(21, 128, 61, 0.12);
+  border-color: rgba(21, 128, 61, 0.2);
+  color: #15803D;
 }
 
 .cardCta {
@@ -376,20 +379,20 @@
   align-items: center;
   gap: 10px;
   padding: 14px 28px;
-  background: linear-gradient(135deg, #FDE047 0%, #EAB308 100%);
+  background: linear-gradient(135deg, #15803D 0%, #22C55E 100%);
   border-radius: 50px;
   font-size: 0.9rem;
   font-weight: 700;
-  color: #0C0A09;
+  color: #FFFFFF;
   margin-top: auto;
   transition: all 0.4s ease;
-  font-family: 'Montserrat', sans-serif;
-  box-shadow: 0 10px 30px rgba(253, 224, 71, 0.3);
+  font-family: 'Raleway', sans-serif;
+  box-shadow: 0 10px 30px rgba(21, 128, 61, 0.3);
 }
 
 .card:hover .cardCta {
   transform: translateX(6px);
-  box-shadow: 0 15px 40px rgba(253, 224, 71, 0.5);
+  box-shadow: 0 15px 40px rgba(21, 128, 61, 0.4);
 }
 
 .cardCta svg {

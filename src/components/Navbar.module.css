@@ -60,18 +60,18 @@
 }
 
 .logoText {
-  font-family: 'Cormorant', serif;
+  font-family: 'Lora', serif;
   font-size: 1.35rem;
-  font-weight: 600;
-  color: var(--primary);
+  font-weight: 700;
+  color: #15803D;
   letter-spacing: -0.02em;
   line-height: 1.2;
 }
 
 .logoSubtext {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 0.75rem;
-  color: var(--text-muted);
+  color: #22C55E;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
