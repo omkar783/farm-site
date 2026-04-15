@@ -23,26 +23,39 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
+  cursor: pointer;
 }
 
-.logoIcon {
-  width: 44px;
-  height: 44px;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-  border-radius: var(--radius);
+.logoSvg {
+  animation: logoFloat 6s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.logoTextWrap {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--white);
+  flex-direction: column;
 }
 
 .logoText {
   font-family: 'Cormorant', serif;
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   font-weight: 600;
   color: var(--primary);
   letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.logoSubtext {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .navLinks {
