@@ -9,7 +9,9 @@ export default function Location() {
       <section className={styles.hero}>
         <div className={styles.heroContent}>
           <h1 className={styles.title}>Visit Us</h1>
+          <p className={styles.titleMarathi} lang="mr">आमच्याला भेट द्या</p>
           <p className={styles.subtitle}>Find your way to DattuBhau Bhole Farm House</p>
+          <p className={styles.subtitleMarathi} lang="mr">दत्तूभाऊ भोले फार्म हाऊसला येण्याचा मार्ग शोधा</p>
         </div>
       </section>
 
@@ -32,9 +34,12 @@ export default function Location() {
             <div className={styles.addressHeader}>
               <MapPin className={styles.icon} />
               <h2>Our Location</h2>
+              <p className={styles.addressHeaderMarathi} lang="mr">आमचे स्थान</p>
             </div>
             <p className={styles.address}>{address}</p>
+            <p className={styles.addressMarathi} lang="mr">र व्ही 4 जे 69, देवगड, महाराष्ट्र 431123</p>
             <p className={styles.village}>Deogaon, Maharashtra</p>
+            <p className={styles.villageMarathi} lang="mr">देवगड, महाराष्ट्र</p>
             
             <a 
               href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`}
@@ -44,6 +49,7 @@ export default function Location() {
             >
               <Navigation size={18} />
               Get Directions
+              <span className={styles.directionsBtnMarathi} lang="mr"> दिशा मववा</span>
             </a>
           </div>
         </div>

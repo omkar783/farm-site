@@ -17,6 +17,13 @@
 .title {
   font-size: 3rem;
   color: var(--white);
+  margin-bottom: 4px;
+}
+
+.titleMarathi {
+  font-size: 1.8rem;
+  color: var(--white);
+  opacity: 0.9;
   margin-bottom: 12px;
 }
 
@@ -24,6 +31,13 @@
   font-size: 1.25rem;
   color: var(--white);
   opacity: 0.9;
+  margin-bottom: 4px;
+}
+
+.subtitleMarathi {
+  font-size: 1rem;
+  color: var(--white);
+  opacity: 0.8;
 }
 
 .mapSection {
@@ -68,14 +82,31 @@
   color: var(--primary);
 }
 
+.addressHeaderMarathi {
+  font-size: 1rem;
+  color: var(--secondary);
+  margin-left: 8px;
+}
+
 .address {
   font-size: 1.25rem;
   color: var(--text-primary);
   font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.addressMarathi {
+  font-size: 1rem;
+  color: var(--text-secondary);
   margin-bottom: 8px;
 }
 
 .village {
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.villageMarathi {
   color: var(--text-secondary);
   margin-bottom: 24px;
 }
@@ -90,6 +121,11 @@
   border-radius: 50px;
   font-weight: 600;
   transition: all 0.3s ease;
+}
+
+.directionsBtnMarathi {
+  font-size: 0.9rem;
+  margin-left: 4px;
 }
 
 .directionsBtn:hover {

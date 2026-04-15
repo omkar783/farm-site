@@ -17,6 +17,13 @@
 .title {
   font-size: 3rem;
   color: var(--white);
+  margin-bottom: 4px;
+}
+
+.titleMarathi {
+  font-size: 1.8rem;
+  color: var(--white);
+  opacity: 0.9;
   margin-bottom: 12px;
 }
 
@@ -24,6 +31,33 @@
   font-size: 1.25rem;
   color: var(--white);
   opacity: 0.9;
+  margin-bottom: 4px;
+}
+
+.subtitleMarathi {
+  font-size: 1rem;
+  color: var(--white);
+  opacity: 0.8;
+}
+
+.infoTextMarathi {
+  font-size: 1rem;
+  color: var(--secondary);
+  margin-bottom: 16px;
+  font-family: 'Noto Sans Devanagari', sans-serif;
+}
+
+.infoText {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.contactMarathi {
+  font-size: 0.9rem;
+  color: var(--secondary);
+  margin-bottom: 4px;
+  font-family: 'Noto Sans Devanagari', sans-serif;
 }
 
 .contactSection {
@@ -89,7 +123,14 @@
 .form h3 {
   font-size: 1.5rem;
   color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.formTitleMarathi {
+  font-size: 1rem;
+  color: var(--secondary);
   margin-bottom: 24px;
+  font-family: 'Noto Sans Devanagari', sans-serif;
 }
 
 .formGroup {
@@ -99,8 +140,15 @@
 .formGroup label {
   display: block;
   font-weight: 500;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   color: var(--text-primary);
+}
+
+.labelMarathi {
+  font-size: 0.9rem;
+  color: var(--secondary);
+  margin-bottom: 8px;
+  font-family: 'Noto Sans Devanagari', sans-serif;
 }
 
 .formGroup input,
@@ -153,12 +201,19 @@
 .successMessage h3 {
   color: var(--primary);
   font-size: 1.75rem;
+  margin-bottom: 4px;
+}
+
+.successMarathi {
+  font-size: 1.2rem;
+  color: var(--secondary);
   margin-bottom: 12px;
+  font-family: 'Noto Sans Devanagari', sans-serif;
 }
 
 .successMessage p {
   color: var(--text-secondary);
-  margin-bottom: 24px;
+  margin-bottom: 12px;
 }
 
 .anotherBtn {
@@ -170,6 +225,14 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btnMarathi {
+  font-size: 0.9rem;
+  margin-left: 4px;
 }
 
 .anotherBtn:hover {
