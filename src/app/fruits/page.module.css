@@ -1,131 +1,354 @@
 .page {
   flex: 1;
-  padding-top: 70px;
+  overflow: hidden;
 }
 
 .hero {
-  background: linear-gradient(135deg, #2D5016 0%, #4a7028 100%);
-  padding: 60px 24px;
-  text-align: center;
+  min-height: 60vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0C0A09 0%, #1C1917 50%, #0C0A09 100%);
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.heroBg::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, transparent 60%);
+  filter: blur(60px);
+  animation: heroGlow 6s ease-in-out infinite;
+}
+
+@keyframes heroGlow {
+  0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.6; }
+  50% { transform: translateX(-50%) scale(1.15); opacity: 0.9; }
 }
 
 .heroContent {
-  max-width: 800px;
-  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 80px 24px 60px;
+}
+
+.heroLabel {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 24px;
 }
 
 .title {
-  font-size: 3rem;
-  color: var(--white);
-  margin-bottom: 12px;
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: #FFF;
+  margin-bottom: 8px;
+}
+
+.titleMarathi {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 24px;
 }
 
 .subtitle {
-  font-size: 1.25rem;
-  color: var(--white);
-  opacity: 0.9;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 600px;
+  margin: 0 auto 8px;
+}
+
+.subtitleMarathi {
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .fruitsSection {
-  padding: 60px 0;
-  background: var(--background);
+  position: relative;
+  padding: 80px 0;
+  background: linear-gradient(180deg, #0C0A09 0%, #1C1917 100%);
+}
+
+.fruitsDeco {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.fruitsDeco1,
+.fruitsDeco2 {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.15;
+}
+
+.fruitsDeco1 {
+  top: -200px;
+  left: -200px;
+  background: #8B5CF6;
+}
+
+.fruitsDeco2 {
+  bottom: -200px;
+  right: -200px;
+  background: #22C55E;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
 }
 
 .fruitCard {
-  display: flex;
-  gap: 40px;
-  align-items: flex-start;
-  background: var(--white);
-  border-radius: 16px;
-  padding: 40px;
-  margin-bottom: 32px;
-  box-shadow: var(--shadow);
-  transition: all 0.3s ease;
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .fruitCard:hover {
-  box-shadow: var(--shadow-hover);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-4px);
 }
 
 .fruitCard.clickable {
   cursor: pointer;
-  transition: transform 0.3s ease;
 }
 
-.fruitCard.clickable:hover {
-  transform: translateY(-4px);
+.fruitCardBg {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
-.fruitIcon {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
+.fruitCard:hover .fruitCardBg {
+  opacity: 0.08;
+}
+
+.fruitCardContent {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 40px;
+  align-items: center;
+  padding: 40px;
+}
+
+.fruitIconWrap {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 4rem;
-  flex-shrink: 0;
+  width: 140px;
+  height: 140px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  transition: all 0.4s ease;
 }
 
-.fruitInfo {
-  flex: 1;
+.fruitCard:hover .fruitIconWrap {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.viewGallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.fruitCard:hover .viewGallery {
+  background: rgba(255, 255, 255, 0.15);
+  color: #FFF;
+}
+
+.fruitRight {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fruitHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.fruitNumber {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.1em;
 }
 
 .fruitName {
-  font-size: 2rem;
-  color: var(--primary);
-  margin-bottom: 8px;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 600;
+  color: #FFF;
+  margin: 0;
+}
+
+.fruitNameMarathi {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
 }
 
 .fruitSeason {
-  font-size: 0.95rem;
-  color: var(--secondary);
-  font-weight: 600;
-  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50px;
+  width: fit-content;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.fruitSeason svg {
+  color: #FDE047;
+}
+
+.fruitSeasonMarathi {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.fruitSeasonMarathi::before {
+  content: '\2022';
+  margin: 0 8px;
 }
 
 .fruitDesc {
-  color: var(--text-secondary);
+  font-size: 1rem;
   line-height: 1.7;
-  margin-bottom: 20px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  max-width: 600px;
 }
 
-.highlights {
-  list-style: none;
+.fruitHighlights {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
+  margin-top: 8px;
 }
 
-.highlights li {
-  background: var(--background);
-  color: var(--primary);
-  padding: 8px 16px;
+.highlightTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 50px;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+}
+
+.highlightTag svg {
+  color: #22C55E;
+}
+
+.fruitCard:hover .highlightTag {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 @media (max-width: 768px) {
-  .title {
-    font-size: 2rem;
-  }
-
-  .fruitCard {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 32px 24px;
+  .fruitCardContent {
+    grid-template-columns: 1fr;
     gap: 24px;
+    padding: 24px;
+    text-align: center;
   }
 
-  .fruitIcon {
+  .fruitIconWrap {
+    margin: 0 auto;
     width: 120px;
     height: 120px;
-    font-size: 3rem;
   }
 
-  .highlights {
+  .fruitHeader {
     justify-content: center;
+  }
+
+  .fruitSeason {
+    margin: 0 auto;
+  }
+
+  .fruitHighlights {
+    justify-content: center;
+  }
+
+  .fruitDesc {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .fruitIconWrap {
+    width: 100px;
+    height: 100px;
+  }
+
+  .fruitIconWrap svg {
+    width: 80px !important;
+    height: 80px !important;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .fruitCardContent {
+    padding: 20px;
   }
 }
