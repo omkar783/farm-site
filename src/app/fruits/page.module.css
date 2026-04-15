@@ -1,295 +1,355 @@
 .page {
   flex: 1;
   overflow: hidden;
+  position: relative;
+}
+
+.bgOrbs {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.orb1, .orb2, .orb3 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: float 20s ease-in-out infinite;
+}
+
+.orb1 {
+  width: 600px;
+  height: 600px;
+  top: -200px;
+  left: -200px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+}
+
+.orb2 {
+  width: 500px;
+  height: 500px;
+  top: 50%;
+  right: -150px;
+  background: radial-gradient(circle, rgba(234, 179, 8, 0.12) 0%, transparent 70%);
+  animation-delay: -7s;
+}
+
+.orb3 {
+  width: 400px;
+  height: 400px;
+  bottom: -100px;
+  left: 30%;
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.1) 0%, transparent 70%);
+  animation-delay: -14s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -30px) scale(1.05); }
+  66% { transform: translate(-20px, 20px) scale(0.95); }
 }
 
 .hero {
-  min-height: 60vh;
+  min-height: 50vh;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  overflow: hidden;
-  background: linear-gradient(135deg, #0C0A09 0%, #1C1917 50%, #0C0A09 100%);
+  z-index: 1;
 }
 
-.heroBg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-
-.heroBg::before {
+.hero::before {
   content: '';
   position: absolute;
-  top: 10%;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, transparent 60%);
-  filter: blur(60px);
-  animation: heroGlow 6s ease-in-out infinite;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+  filter: blur(40px);
+  animation: heroPulse 8s ease-in-out infinite;
 }
 
-@keyframes heroGlow {
-  0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.6; }
-  50% { transform: translateX(-50%) scale(1.15); opacity: 0.9; }
+@keyframes heroPulse {
+  0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
 }
 
 .heroContent {
   position: relative;
-  z-index: 1;
   text-align: center;
-  padding: 80px 24px 60px;
+  padding: 100px 24px 60px;
 }
 
 .heroLabel {
   display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
-  margin-bottom: 24px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 20px;
+  padding: 8px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50px;
 }
 
 .title {
-  font-size: clamp(3rem, 8vw, 5rem);
+  font-size: clamp(3.5rem, 10vw, 6rem);
   font-weight: 600;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
   color: #FFF;
   margin-bottom: 8px;
+  background: linear-gradient(135deg, #FFF 0%, #FDE047 50%, #FFF 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
 .titleMarathi {
   font-size: clamp(1.5rem, 4vw, 2.5rem);
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 24px;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 20px;
 }
 
 .subtitle {
   font-size: clamp(1rem, 2vw, 1.25rem);
-  color: rgba(255, 255, 255, 0.6);
-  max-width: 600px;
-  margin: 0 auto 8px;
+  color: rgba(255, 255, 255, 0.5);
+  max-width: 500px;
+  margin: 0 auto 6px;
 }
 
 .subtitleMarathi {
-  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
-  color: rgba(255, 255, 255, 0.5);
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .fruitsSection {
   position: relative;
-  padding: 80px 0;
-  background: linear-gradient(180deg, #0C0A09 0%, #1C1917 100%);
-}
-
-.fruitsDeco {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.fruitsDeco1,
-.fruitsDeco2 {
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  filter: blur(100px);
-  opacity: 0.15;
-}
-
-.fruitsDeco1 {
-  top: -200px;
-  left: -200px;
-  background: #8B5CF6;
-}
-
-.fruitsDeco2 {
-  bottom: -200px;
-  right: -200px;
-  background: #22C55E;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  position: relative;
+  padding: 60px 0 100px;
   z-index: 1;
 }
 
-.fruitCard {
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.card {
   position: relative;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 28px;
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(40px);
 }
 
-.fruitCard:hover {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.15);
-  transform: translateY(-4px);
+.cardLoaded {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: var(--delay, 0s);
 }
 
-.fruitCard.clickable {
+.card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+}
+
+.card.clickable {
   cursor: pointer;
 }
 
-.fruitCardBg {
+.cardGlow {
   position: absolute;
   inset: 0;
+  background: linear-gradient(135deg, var(--accent, #FDE047) 0%, transparent 60%);
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.5s ease;
 }
 
-.fruitCard:hover .fruitCardBg {
-  opacity: 0.08;
+.card:hover .cardGlow {
+  opacity: 0.06;
 }
 
-.fruitCardContent {
+.cardBorder {
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  border-radius: 28px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%) border-box;
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.card:hover .cardBorder {
+  opacity: 1;
+}
+
+.cardContent {
   position: relative;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 40px;
-  align-items: center;
-  padding: 40px;
-}
-
-.fruitIconWrap {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 140px;
-  height: 140px;
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 20px;
-  transition: all 0.4s ease;
-}
-
-.fruitCard:hover .fruitIconWrap {
-  transform: scale(1.05);
-  background: rgba(255, 255, 255, 0.06);
-}
-
-.viewGallery {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 16px;
-  padding: 10px 20px;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 50px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.8);
-  transition: all 0.3s ease;
-}
-
-.fruitCard:hover .viewGallery {
-  background: rgba(255, 255, 255, 0.15);
-  color: #FFF;
-}
-
-.fruitRight {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  padding: 36px;
+  height: 100%;
 }
 
-.fruitHeader {
-  display: flex;
-  align-items: baseline;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.fruitNumber {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.4);
-  letter-spacing: 0.1em;
-}
-
-.fruitName {
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
-  font-weight: 600;
-  color: #FFF;
-  margin: 0;
-}
-
-.fruitNameMarathi {
-  font-size: clamp(1.25rem, 3vw, 1.75rem);
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.7);
-  margin: 0;
-}
-
-.fruitSeason {
+.iconWrap {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  padding: 8px 16px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 50px;
-  width: fit-content;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.7);
+  justify-content: center;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 28px;
 }
 
-.fruitSeason svg {
-  color: #FDE047;
+.iconWrap svg {
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.fruitSeasonMarathi {
+.card:hover .iconWrap svg {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.iconRing {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  animation: ringPulse 4s ease-in-out infinite;
+}
+
+@keyframes ringPulse {
+  0%, 100% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.05); opacity: 0.6; }
+}
+
+.cardBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.cardTagline {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent, #FDE047);
+  opacity: 0.9;
+}
+
+.cardTaglineMarathi {
+  font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.5);
 }
 
-.fruitSeasonMarathi::before {
-  content: '\2022';
-  margin: 0 8px;
-}
-
-.fruitDesc {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.6);
+.cardTitle {
+  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+  font-weight: 600;
+  color: #FFF;
   margin: 0;
-  max-width: 600px;
+  line-height: 1.2;
 }
 
-.fruitHighlights {
+.cardTitleMarathi {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 16px;
+}
+
+.cardSeason {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 50px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 16px;
+}
+
+.cardSeason svg {
+  color: var(--accent, #FDE047);
+}
+
+.cardSeasonMarathi {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.cardSeasonMarathi::before {
+  content: '\2022';
+  margin: 0 6px;
+  opacity: 0.5;
+}
+
+.cardDesc {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 0 20px;
+  max-width: 320px;
+}
+
+.cardHighlights {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 8px;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
 }
 
 .highlightTag {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px 14px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 5px;
+  padding: 5px 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 50px;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.6);
   transition: all 0.3s ease;
 }
 
@@ -297,58 +357,96 @@
   color: #22C55E;
 }
 
-.fruitCard:hover .highlightTag {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
+.card:hover .highlightTag {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.8);
 }
 
-@media (max-width: 768px) {
-  .fruitCardContent {
+.cardCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, var(--accent, #FDE047) 0%, #CA8A04 100%);
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0C0A09;
+  margin-top: auto;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 30px rgba(var(--accent, #FDE047), 0.3);
+}
+
+.card:hover .cardCta {
+  transform: translateX(4px);
+  box-shadow: 0 12px 40px rgba(var(--accent, #FDE047), 0.5);
+}
+
+.cardCta svg {
+  transition: transform 0.3s ease;
+}
+
+.card:hover .cardCta svg {
+  transform: translateX(4px);
+}
+
+@media (max-width: 900px) {
+  .grid {
     grid-template-columns: 1fr;
     gap: 24px;
-    padding: 24px;
-    text-align: center;
+    padding: 0 20px;
   }
-
-  .fruitIconWrap {
-    margin: 0 auto;
-    width: 120px;
-    height: 120px;
+  
+  .iconWrap {
+    width: 140px;
+    height: 140px;
   }
-
-  .fruitHeader {
-    justify-content: center;
+  
+  .iconWrap svg {
+    width: 100px !important;
+    height: 100px !important;
   }
-
-  .fruitSeason {
-    margin: 0 auto;
-  }
-
-  .fruitHighlights {
-    justify-content: center;
-  }
-
-  .fruitDesc {
-    text-align: center;
+  
+  .iconRing {
+    width: 160px;
+    height: 160px;
   }
 }
 
 @media (max-width: 480px) {
-  .fruitIconWrap {
-    width: 100px;
-    height: 100px;
+  .hero {
+    min-height: 45vh;
   }
-
-  .fruitIconWrap svg {
+  
+  .heroContent {
+    padding: 80px 20px 40px;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .titleMarathi {
+    font-size: 1.25rem;
+  }
+  
+  .cardContent {
+    padding: 28px 20px;
+  }
+  
+  .iconWrap {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .iconWrap svg {
     width: 80px !important;
     height: 80px !important;
   }
-
-  .container {
-    padding: 0 16px;
-  }
-
-  .fruitCardContent {
-    padding: 20px;
+  
+  .iconRing {
+    width: 140px;
+    height: 140px;
   }
 }
